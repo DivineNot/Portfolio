@@ -1,0 +1,125 @@
+.commissions {
+  margin: 4rem 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInUp 1.2s cubic-bezier(.4,0,.2,1);
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.commissions-container {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.commission-card {
+  background: linear-gradient(120deg, #181818 80%, #23243a 100%);
+  border-radius: 18px;
+  padding: 2rem 2.5rem 2.5rem 2.5rem;
+  min-width: 320px;
+  box-shadow: 0 4px 32px 0 #b57aff22;
+  margin-bottom: 2rem;
+  transition: box-shadow 0.4s, transform 0.2s;
+  animation: cardPop 1.1s cubic-bezier(.4,0,.2,1);
+  position: relative;
+  overflow: hidden;
+}
+@keyframes cardPop {
+  from { opacity: 0; transform: scale(0.95) translateY(30px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.commission-card:hover {
+  box-shadow: 0 8px 40px 0 #b57aff44;
+  transform: translateY(-4px) scale(1.03);
+}
+.commission-card h3 {
+  font-size: 2rem;
+  margin-bottom: 0.7rem;
+  letter-spacing: 1px;
+}
+.commission-card p {
+  color: #bfc9db;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 8px #000a;
+}
+.commission-types {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.commission-types strong {
+  color: #6ea8ff;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+.commission-types div {
+  margin-bottom: 0.3rem;
+  transition: color 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+.commission-types div:hover {
+  color: #b57aff;
+  transform: scale(1.06) translateX(6px);
+}
+.commission-group {
+  margin-bottom: 1.7rem;
+}
+.commission-group-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  color: #fff;
+}
+.commission-prices-row {
+  display: flex;
+  gap: 1.1rem;
+  margin-bottom: 0.7rem;
+  justify-content: flex-start;
+}
+.commission-price-box {
+  background: #181818;
+  border-radius: 12px;
+  padding: 1.1rem 1.3rem 1.1rem 1.1rem;
+  width: 180px;
+  min-width: 140px;
+  max-width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 2px 12px 0 #000a;
+  margin-bottom: 0;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+.commission-price-label {
+  color: #bfc9db;
+  font-weight: 600;
+  margin-right: 0.3rem;
+}
+.commission-price-value {
+  color: #fff;
+  font-weight: 700;
+}
+.commission-group:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 900px) {
+  .commission-prices-row {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .commission-price-box {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    justify-content: flex-start;
+  }
+} 

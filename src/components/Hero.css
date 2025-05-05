@@ -1,0 +1,94 @@
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  margin-top: 2rem;
+  animation: fadeIn 1.2s cubic-bezier(.4,0,.2,1);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 350px;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.03) 60%, transparent 100%);
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(32px);
+  border-radius: 50%;
+  opacity: 0.85;
+}
+.hero-title, .hero-subtitle, .hero-tags, .scroll-down {
+  position: relative;
+  z-index: 1;
+}
+.hero-title {
+  font-size: 5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #6a1b9a 10%, #8e24aa 60%, #b57aff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 24px #b57aff33);
+  letter-spacing: 2px;
+  transition: background 0.5s;
+}
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #bfc9db;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 8px #000a;
+  transition: color 0.4s;
+}
+.hero-tags {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.tag {
+  background: linear-gradient(90deg, #23243a 60%, #181818 100%);
+  color: #bfc9db;
+  padding: 0.7rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 12px 0 #6ea8ff22;
+  transition: background 0.4s, box-shadow 0.4s, color 0.3s, transform 0.2s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.tag:hover {
+  background: linear-gradient(90deg, #6ea8ff 40%, #b57aff 100%);
+  color: #fff;
+  box-shadow: 0 4px 24px 0 #b57aff55;
+  transform: scale(1.08) translateY(-2px);
+}
+.scroll-down {
+  font-size: 2rem;
+  color: #bfc9db;
+  margin-top: 2rem;
+  animation: bounce 1.5s infinite;
+  filter: drop-shadow(0 2px 8px #6ea8ff44);
+  transition: color 0.3s;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+.App {
+  min-height: 100vh;
+  background: #050505;
+} 

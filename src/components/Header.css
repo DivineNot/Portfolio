@@ -1,0 +1,124 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 5vw 0.7rem 2vw;
+  background: rgba(5, 5, 5, 0.82);
+  box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.10);
+  backdrop-filter: blur(14px) saturate(1.1);
+  border-radius: 0;
+  min-height: 48px;
+  animation: headerFade 1.2s cubic-bezier(.4,0,.2,1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+}
+@keyframes headerFade {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.logo {
+  font-size: 1.7rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #6a1b9a 10%, #8e24aa 60%, #b57aff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  transition: background 0.5s;
+  margin-right: 2vw;
+  margin-left: 0;
+  padding: 0.1rem 1.5rem 0.1rem 0.1rem;
+  position: static;
+  filter: none;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  background: rgba(25, 25, 35, 0.22);
+  border-radius: 18px;
+  padding: 0.3rem 1.2rem;
+  box-shadow: 0 2px 16px 0 #b57aff11;
+  align-items: center;
+  animation: navFade 1.5s cubic-bezier(.4,0,.2,1);
+  margin-left: auto;
+  margin-right: 6vw;
+}
+@keyframes navFade {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.nav a {
+  color: #bfc9db;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.3s, transform 0.2s;
+  position: relative;
+  padding: 0.25rem 0.7rem;
+  border-radius: 7px;
+}
+.nav a.active, .nav a:hover {
+  color: #6ea8ff;
+  transform: translateY(-2px) scale(1.07);
+  background: rgba(110,168,255,0.08);
+}
+.nav a::after {
+  display: none;
+}
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #ffd600;
+  transition: color 0.2s, transform 0.2s;
+  margin-left: 1.2rem;
+}
+.theme-toggle:hover {
+  color: #ffb86c;
+  transform: rotate(-20deg) scale(1.2);
+}
+body {
+  padding-top: 110px;
+}
+.nav a svg {
+  transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+}
+.nav a.services-link:hover svg {
+  transform: rotate(40deg) scale(1.12);
+}
+.discord-btn-icon, .paypal-btn-icon {
+  background: none !important;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  box-shadow: none;
+  padding: 0;
+}
+.discord-btn-icon:hover {
+  background: none !important;
+  box-shadow: none;
+}
+.paypal-btn-icon:hover {
+  background: none !important;
+  box-shadow: none;
+}
+.discord-btn-icon svg {
+  transition: transform 0.2s;
+}
+.discord-btn-icon:hover svg {
+  transform: scale(1.13);
+}
+.paypal-btn-icon svg {
+  transition: transform 0.2s;
+}
+.paypal-btn-icon:hover svg {
+  transform: scale(1.13);
+} 
